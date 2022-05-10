@@ -3,7 +3,7 @@ using ProductApp.Domain.Repositories.Base;
 
 namespace ProductApp.Domain.Repositories
 {
-    public interface ICategoryRepository : IRepository<Repository>
+    public interface ICategoryRepository : IRepository<Category>
     {
     }
 }

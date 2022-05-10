@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductApp.Domain", "ProductApp.Domain\ProductApp.Domain.csproj", "{31B321D2-772F-47E4-A7B0-B309088D3E4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductApp.Domain", "ProductApp.Domain\ProductApp.Domain.csproj", "{31B321D2-772F-47E4-A7B0-B309088D3E4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductApp.Application", "ProductApp.Application\ProductApp.Application.csproj", "{F1417EC9-288C-43BD-AAFD-5AA05BB7EFD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductApp.Application", "ProductApp.Application\ProductApp.Application.csproj", "{F1417EC9-288C-43BD-AAFD-5AA05BB7EFD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductApp.Infrastructure", "ProductApp.Infrastructure\ProductApp.Infrastructure.csproj", "{2FB05DB2-AE54-423D-810B-B1591F203001}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductApp.Infrastructure", "ProductApp.Infrastructure\ProductApp.Infrastructure.csproj", "{2FB05DB2-AE54-423D-810B-B1591F203001}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductApp.API", "ProductApp.API\ProductApp.API.csproj", "{81D240C7-39B5-44B9-8001-3A64AB717563}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{2FB05DB2-AE54-423D-810B-B1591F203001}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FB05DB2-AE54-423D-810B-B1591F203001}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FB05DB2-AE54-423D-810B-B1591F203001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81D240C7-39B5-44B9-8001-3A64AB717563}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81D240C7-39B5-44B9-8001-3A64AB717563}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81D240C7-39B5-44B9-8001-3A64AB717563}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81D240C7-39B5-44B9-8001-3A64AB717563}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,32 +1,47 @@
-﻿using ProductApp.Domain.Repositories.Base;
+﻿using Microsoft.EntityFrameworkCore;
+using ProductApp.Domain.Repositories.Base;
+using ProductApp.Infrastructure.Persistence;
 
 namespace ProductApp.Infrastructure.Repositories.Base
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        public Task<T> AddAsync(T entity)
+        private readonly ApplicationDbContext _db;
+
+        public Repository(ApplicationDbContext db)
         {
-            throw new NotImplementedException();
+            _db = db;
         }
 
-        public Task DeleteAsync(T entity)
+        public async Task<T> AddAsync(T entity)
         {
-            throw new NotImplementedException();
+            await _db.Set<T>().AddAsync(entity);
+            await _db.SaveChangesAsync();
+            return entity;
         }
 
-        public Task<IReadOnlyList<T>> GetAllAsync()
+        public async Task DeleteAsync(T entity)
         {
-            throw new NotImplementedException();
+            _db.Set<T>().Remove(entity);
+            await _db.SaveChangesAsync();
         }
 
-        public Task<T> GetByIdAsync(int id)
+        public async Task<IReadOnlyList<T>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _db.Set<T>().ToListAsync();
         }
 
-        public Task UpdateAsync(T entity)
+        public async Task<T> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var obj = await _db.Set<T>().FindAsync(id);
+            return obj!;
+        }
+
+        public async Task<T> UpdateAsync(T entity)
+        {
+            _db.Set<T>().Update(entity);
+            await _db.SaveChangesAsync();
+            return entity;
         }
     }
 }
