@@ -1,6 +1,13 @@
-﻿namespace ProductApp.Application.Commands
+﻿using FluentValidation;
+
+namespace ProductApp.Application.Commands;
+
+public class CreateCategoryCommandValidator : AbstractValidator<CreateCategoryCommand>
 {
-    public class CreateCategoryCommandValidator
+    public CreateCategoryCommandValidator()
     {
+        RuleFor(c=>c.Description)
+            .MaximumLength(300)
+            .NotEmpty();
     }
 }
