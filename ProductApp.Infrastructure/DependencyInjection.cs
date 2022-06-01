@@ -1,7 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ProductApp.Domain.Repositories;
+using ProductApp.Domain.Repositories.Base;
 using ProductApp.Infrastructure.Persistence;
+using ProductApp.Infrastructure.Repositories;
+using ProductApp.Infrastructure.Repositories.Base;
 
 namespace ProductApp.Infrastructure
 {
@@ -21,6 +25,8 @@ namespace ProductApp.Infrastructure
                         configuration.GetConnectionString("DbConnection"),
                         b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
             }
+
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
             return services;
         }
